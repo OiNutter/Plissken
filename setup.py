@@ -1,16 +1,9 @@
 from distutils.core import setup, Extension
 
 plissken = Extension('plissken',
+					libraries=["houdini"],
+					library_dirs=["lib"],
                     sources = [
-                    			'lib/buffer.c',
-                    			'lib/houdini_href_e.c',
-                    			'lib/houdini_html_e.c',
-                    			'lib/houdini_html_u.c',
-                    			'lib/houdini_js_e.c',
-                    			'lib/houdini_js_u.c',
-                    			'lib/houdini_uri_e.c',
-                    			'lib/houdini_uri_u.c',
-                    			'lib/houdini_xml_e.c',
                     			'plissken.c'
                     		]
                     	)
