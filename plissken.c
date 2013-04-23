@@ -29,12 +29,22 @@ static PyObject *
 plissken_escape_html(PyObject *self, PyObject *args)
 {
 	const char *str;
+    PyObject *py_secure;
 	gh_buf buf = GH_BUF_INIT;
+    int secure = g_html_secure;
 
-    if (!PyArg_ParseTuple(args, "s", &str))
+    if (PyArg_ParseTuple(args, "s|O", &str,&py_secure)) 
+    {
+        if(!PyObject_IsTrue(py_secure))
+        {
+            secure=0;
+        }
+        
+    } else {
         return NULL;
+    }
 
-    if (houdini_escape_html0(&buf, (const uint8_t *)str, sizeof(str),g_html_secure)) {
+    if (houdini_escape_html0(&buf, (const uint8_t *)str, sizeof(str),secure)) {
 		PyObject *result = Py_BuildValue("s",buf.ptr);
 		return result;
 	}
