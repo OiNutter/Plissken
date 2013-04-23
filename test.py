@@ -21,3 +21,15 @@ print '&#39;:  ',plissken.unescape_html('&#39;')
 print '&#47;:  ',plissken.unescape_html('&#47;')
 
 print '##############################'
+print 'plissken.escape_js'
+
+print '": ',plissken.escape_js('"')
+print '\': ',plissken.escape_js('\'')
+
+print '##############################'
+print 'plissken.unescape_js'
+
+print '\\": ',plissken.unescape_js('\\"')
+print '\\\': ',plissken.unescape_js('\\\'')
+
+print '##############################'
