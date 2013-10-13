@@ -18,11 +18,11 @@ Usage
 ```python
 import plissken
 
-plissken.escape_html('')
-# >> 
+plissken.escape_html('&')
+# >> &amp;
 
-plissken.unescape_html('')
-# >> 
+plissken.unescape_html('&amp;')
+# >> &
 
 plissken.escape_xml('')
 # >>
@@ -39,11 +39,11 @@ plissken.unescape_url('')
 plissken.escape_href('')
 # >>
 
-plissken.escape_js('')
-# >>
+plissken.escape_js('"')
+# >> \"
 
-plissken.unescape_js('')
-# >>
+plissken.unescape_js('\"')
+# >> "
 
 ```
 
