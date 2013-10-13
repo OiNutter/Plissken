@@ -83,6 +83,18 @@ plissken_unescape_uri(PyObject *self, PyObject *args)
 }
 
 static PyObject *
+plissken_escape_url(PyObject *self, PyObject *args)
+{
+   return plissken__generic_escape(&houdini_escape_url,args);
+}
+
+static PyObject *
+plissken_unescape_url(PyObject *self, PyObject *args)
+{
+   return plissken__generic_escape(&houdini_unescape_url,args);
+}
+
+static PyObject *
 plissken_escape_xml(PyObject *self, PyObject *args)
 {
    return plissken__generic_escape(&houdini_escape_xml,args);
